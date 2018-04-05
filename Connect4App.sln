@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4", "Connect4App\Connect4.csproj", "{06329060-2D65-4648-B5E6-C55F27FB2710}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connect4App", "Connect4App\Connect4App.csproj", "{06329060-2D65-4648-B5E6-C55F27FB2710}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Connect4
+namespace Connect4App
 {
     class Program
     {
