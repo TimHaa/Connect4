@@ -13,20 +13,40 @@ namespace Connect4App
         {
             Board b = new Board();
             players = SetPlayers();
-            ReassignOrder(players);
+            players.Shuffle();
             while (!b.PlayerWon)
             {
-                foreach (Player p in players){
+                foreach (Player p in players)
+                {
                     b.GetInput(p.GetRow);
                     if (b.PlayerWon)
                     {
                         Console.WriteLine("Congratulations {0}, you won!", b.victorious);
+                        break;
                     }
                 }
-                
+
+            }
+            Console.WriteLine("Want another Game? y/n");
+            try
+            {
+                string nextGame = Console.ReadLine();
+                if (nextGame == "y")
+                {
+                    StartGame();
+                }
+                else
+                {
+                    Console.WriteLine("Bye");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("That didn't work, bye");
             }
             
         }
+
         private List<Player> SetPlayers()
         {
             List<Player> plrs = new List<Player>();
@@ -61,6 +81,20 @@ namespace Connect4App
                 }
             }
             return plrs;
+        }
+        private static Random rng = new Random();
+
+        public static void Shuffle<T>(this IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
         }
     }
 }
